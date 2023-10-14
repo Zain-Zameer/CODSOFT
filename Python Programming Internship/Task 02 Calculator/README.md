@@ -1,4 +1,4 @@
-###CODESOFT Internship Task 02: Python GUI Calculator Project Overview
+CODESOFT Internship Task 02: Python GUI Calculator Project Overview
 
 Welcome to Task 02 of CODESOFT internship! In this project, I've created a simple calculator application using Python's tkinter library. This calculator provides a graphical user interface for performing basic arithmetic operations.
 
@@ -19,15 +19,19 @@ Installation and Usage
 
     Clone this project repository to your local machine:
     
-        git clone https://github.com/yourusername/python-gui-calculator.git
+        git clone https://github.com/Zain-Zameer/CODSOFT/tree/main/Python%20Programming%20Internship/Task%2002%20Calculator
 
 Change your current directory to the project folder:
 
-        cd python-gui-calculator
+        cd "Task 02 Calculator"
 
 Run the Python script to start the calculator:
-
-        python calculator.py
+        
+        Windows
+        python myCalculator.py
+        
+        Linux
+        python3 myCalculator.py
 
 How to Use
 
