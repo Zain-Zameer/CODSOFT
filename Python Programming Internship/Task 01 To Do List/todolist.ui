@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>857</width>
+    <height>704</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QListWidget" name="taskList">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>120</y>
+      <width>401</width>
+      <height>531</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="enterTask">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>410</y>
+      <width>361</width>
+      <height>41</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QCommandLinkButton" name="addTask">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>480</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>DejaVu Sans Condensed</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>ADD TASK</string>
+    </property>
+    <property name="icon">
+     <iconset theme="document-new">
+      <normaloff>.</normaloff>.</iconset>
+    </property>
+   </widget>
+   <widget class="QCommandLinkButton" name="updateTask">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>480</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>DejaVu Sans Condensed</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>Update Task</string>
+    </property>
+    <property name="icon">
+     <iconset theme="document-save">
+      <normaloff>.</normaloff>.</iconset>
+    </property>
+   </widget>
+   <widget class="QCommandLinkButton" name="deleteTask">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>520</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>DejaVu Sans Condensed</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>DELETE TASK</string>
+    </property>
+    <property name="icon">
+     <iconset theme="edit-delete">
+      <normaloff>.</normaloff>.</iconset>
+    </property>
+   </widget>
+   <widget class="QLabel" name="header2">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>370</y>
+      <width>161</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato Black</family>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>ENTER TASK</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>150</y>
+      <width>61</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="MainLabel">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>140</y>
+      <width>431</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato Black</family>
+      <pointsize>55</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>TO DO LIST</string>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="taskCounter">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>70</y>
+      <width>141</width>
+      <height>51</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QCommandLinkButton" name="saveTasks">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>80</y>
+      <width>71</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>DejaVu Sans Condensed</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>SAVE</string>
+    </property>
+    <property name="icon">
+     <iconset theme="font-x-generic">
+      <normaloff>.</normaloff>.</iconset>
+    </property>
+   </widget>
+   <zorder>taskList</zorder>
+   <zorder>enterTask</zorder>
+   <zorder>addTask</zorder>
+   <zorder>updateTask</zorder>
+   <zorder>deleteTask</zorder>
+   <zorder>header2</zorder>
+   <zorder>MainLabel</zorder>
+   <zorder>checkBox</zorder>
+   <zorder>taskCounter</zorder>
+   <zorder>saveTasks</zorder>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
