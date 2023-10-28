@@ -3,21 +3,25 @@ import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow
 import random as  rd
 
+# Password length variable in which length will be stored and will use further
 password_len = 0
 
+# list of characters and special characters
 charSet = []
 specialChars = ['@','#','$','&','&','*','*','(','(']
 
 passwordGeneratedString = ""
 passwordGenerated = []
 
+# storing upper and lower characters in a charSet using for loop
 for char in range(ord('a'), ord('z') + 1):
     charSet.append(chr(char))
     charSet.append(chr(char).upper())    
 
 
 class Ui_MainWindow(object):
-    
+
+    # Function which will take the length from user and then show generated password.
     def getSpinNumber(self):
         self.textEdit.clear()
         password_len = self.spinBox.value()
@@ -31,7 +35,7 @@ class Ui_MainWindow(object):
         self.textEdit.setText(passwordGeneratedString)
     
     
-
+    # Main function which creates the main window 
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(828, 462)
@@ -104,16 +108,10 @@ class Ui_MainWindow(object):
         self.label_4.setGeometry(QtCore.QRect(50, 330, 21, 18))
         self.label_4.setAutoFillBackground(False)
         self.label_4.setObjectName("label_4")
-        
-        # Set the central widget for the main window
         MainWindow.setCentralWidget(self.centralwidget)
-        
-        # Create a status bar for the main window
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
-
-        # Connect UI elements to translations
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
@@ -125,7 +123,7 @@ class Ui_MainWindow(object):
         self.label_2.setText(_translate("MainWindow", "Password Generator"))
         self.label_3.setText(_translate("MainWindow", "GENERATED PASSWORD"))
         
-
+# Its time to execute our created functions!
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     MainWindow = QMainWindow()
@@ -133,3 +131,5 @@ if __name__ == "__main__":
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
+
+# The End
