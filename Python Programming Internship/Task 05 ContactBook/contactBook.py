@@ -2,12 +2,13 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 import sys
 
 
-
+# little database to store information
 namesData = []
 phonesData = []
 mailsData = []
 addressData = []
 
+# setting scope of the variables as global
 global takeName
 global takePhone
 global takeMail
@@ -30,6 +31,7 @@ class Ui_HomeWindow(object):
         self.contactAddress = None
         self.contactPhoneNumber = None
 
+    # This function will take information that user given
     def get_Info(self):
         if self.takeName is not None:
             name = self.takeName.text()
@@ -54,13 +56,14 @@ class Ui_HomeWindow(object):
 
             self.ContactView.addItem(f"{name[0]} - Name: {name}\n      Phone: {phone}\n      Email: {mail}\n      Address: {address}\n\n")
 
+    # this function will reset if you given wrong info
     def resetInfo(self):
         if self.takeName is not None:
             self.takeName.clear()
             self.takeMail.clear()
             self.takeAddress.clear()
             self.takePhone.clear()
-
+    # Ths function will update the info of your contacts whatever you select to update
     def updateInfoInDatabase(self):
         selectedItem = self.ContactView.currentItem()
         if self.takeName is not None:
@@ -87,6 +90,7 @@ class Ui_HomeWindow(object):
         self.ContactView.takeItem(row)
         self.ContactView.addItem(f"{name[0]} - Name: {name}\n      Phone: {phone}\n      Email: {mail}\n      Address: {address}\n")
 
+    #This function will help you to search for particular contact that it is available or not
     def searchContact(self):
         print(namesData)
         nameContact = self.searchBar.toPlainText()
@@ -99,6 +103,7 @@ class Ui_HomeWindow(object):
             for k in range(len(namesData)):
                 self.ContactView.addItem(f"{namesData[k][0]} - Name: {namesData[k]}\n      Phone: {phonesData[k]}\n      Email: {mailsData[k]}\n      Address: {addressData[k]}\n")
 
+    # This function will help you to delete selected contact 
     def deleteContactClicked(self):
         selectedItem = self.ContactView.currentItem()
 
@@ -107,7 +112,7 @@ class Ui_HomeWindow(object):
             self.countCont.setProperty("intValue", str(self.i))
             self.ContactView.takeItem(self.ContactView.row(selectedItem))
           
-
+    # creation of main window using this function
     def setupUi(self, HomeWindow):
         HomeWindow.setObjectName("HomeWindow")
         HomeWindow.resize(1148, 713)
@@ -324,3 +329,4 @@ if __name__ == "__main__":
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
+# The End
