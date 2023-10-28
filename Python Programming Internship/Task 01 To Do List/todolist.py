@@ -3,12 +3,15 @@ import sys
 
 # List to store tasks and save them when printing them on text file
 tasks = []
+
 class Ui_MainWindow(object):
     def __init__(self):
         self.i = 0
         self.enterTask = None
         self.checkBox = None
         self.taskCounter  =None
+
+    # Function to add task in text list and show them in a listView Widget 
     def addTaskCommand(self):
         text = self.enterTask.toPlainText()
         tasks.append(text)
@@ -16,13 +19,16 @@ class Ui_MainWindow(object):
         self.taskCounter.setProperty("intValue",self.i)
         self.enterTask.clear()
         self.taskList.addItem(f"{text[0]} -   {text}")
-        
+
+    #Function to save task and print them on a text file called "Tasks.txt"
     def saveTasksCommand(self):
         saveTasks = open("Tasks.txt","w")
         saveTasks.write("----------MY TASKS----------\n\n")
         for i in range(len(tasks)):
             saveTasks.write(tasks[i]+"\n")
         saveTasks.close()
+    
+    #Function to delete task and also from tasks list (data base)
     def deleteTaskCommand(self):
         selectedTask = self.taskList.currentItem()
         row = self.taskList.row(selectedTask)
@@ -31,6 +37,7 @@ class Ui_MainWindow(object):
         tasks.pop(index)
         self.i-=1
         self.taskCounter.setProperty("intValue",self.i)
+    # Function to update Tasks list and show updated item on viewList Widget
     def updateTaskCommand(self):
         selectedTask=self.taskList.currentItem()
         text = self.enterTask.toPlainText()
@@ -40,7 +47,8 @@ class Ui_MainWindow(object):
         tasks.pop(index)
         tasks.append(text)
         self.taskList.takeItem(row)
-        self.taskList.addItem(f"{text[0]} -   {text}")        
+        self.taskList.addItem(f"{text[0]} -   {text}")    
+    # Main function which creates the whole Main Window using pyqt5
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(857, 704)
@@ -138,6 +146,7 @@ class Ui_MainWindow(object):
         self.MainLabel.setText(_translate("MainWindow", "TO DO LIST"))
         self.saveTasks.setText(_translate("MainWindow", "SAVE"))
 
+# Its time to execute our created functions !
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
@@ -145,3 +154,5 @@ if __name__ == "__main__":
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
+
+# The End
